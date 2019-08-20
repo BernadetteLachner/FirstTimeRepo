@@ -1,6 +1,6 @@
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
-ctx.fillStyle = 'green';
+ctx.fillStyle = 'black';
 var heroPic = new Image();
 heroPic.src = "http://vignette3.wikia.nocookie.net/playstationallstarsfanfictionroyale/images/d/d3/Mewtwo.png/revision/latest?cb=20130409192330";
 var zombiePic = new Image();
@@ -56,7 +56,7 @@ function genMaze() {
         graphY += 50;
     }
     graphY = 750;
-    ctx.fillStyle = 'gold';
+    ctx.fillStyle = 'white';
     for (var x = 0; x < numberOfGoals; x++) {
         do {
             graphX = 50 * (Math.floor(Math.random() * 16));
@@ -64,7 +64,7 @@ function genMaze() {
         ctx.fillRect(graphX, graphY, 50, 50);
         goals.push(savePoint(graphX, graphY));
     }
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "black";
 }
 function popMaze() {
     var usedPositions = [];
@@ -93,12 +93,12 @@ function reGenMaze() {
         var i = _b[_a];
         ctx.drawImage(zombiePic, i.pos.x, i.pos.y, 50, 50);
     }
-    ctx.fillStyle = 'gold';
+    ctx.fillStyle = 'white';
     for (var _c = 0, goals_1 = goals; _c < goals_1.length; _c++) {
         var x = goals_1[_c];
         ctx.fillRect(x.x, x.y, 50, 50);
     }
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = 'black';
     ctx.drawImage(heroPic, chars.hero.pos.x, chars.hero.pos.y, 50, 50);
 }
 function changeHeroPos(e) {
@@ -205,7 +205,7 @@ window.addEventListener('keydown', function (e) {
 var start = document.getElementById('startGame');
 start.addEventListener('click', function () {
     var span = document.getElementById('top');
-    var directions = document.createTextNode("Click the canvas and get ready to run. Make it to\n    a golden square at the bottom of the map and you win. Don't and get eaten.");
+    var directions = document.createTextNode("Click the canvas and get ready to run. Make it to\n    a white  square at the bottom of the map and you win. Don't and get eaten.");
     span.replaceChild(directions, start);
     setTimeout(function () {
         function mainLoop() {
