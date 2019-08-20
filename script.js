@@ -2,9 +2,9 @@ var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
 ctx.fillStyle = 'black';
 var heroPic = new Image();
-heroPic.src = "http://vignette3.wikia.nocookie.net/playstationallstarsfanfictionroyale/images/d/d3/Mewtwo.png/revision/latest?cb=20130409192330";
+heroPic.src = "https://papermilkdesign.com/images/brain-clipart-animated-16.png";
 var zombiePic = new Image();
-zombiePic.src = 'http://www.pngall.com/wp-content/uploads/2016/07/Zombie-PNG-Picture-180x180.png';
+zombiePic.src = 'http://www.freepngclipart.com/download/zombie/29573-cute-zombie-kid-hd-photo.png';
 var chars = {
     hero: {
         img: heroPic,
@@ -13,7 +13,7 @@ var chars = {
     zombies: []
 };
 var numberOfZombies = 2;
-var numberOfGoals = 2;
+var numberOfGoals = 1;
 var map = [];
 var goals = [];
 var Point = (function () {
@@ -172,7 +172,7 @@ function savePoint(x, y) {
     return obj;
 }
 function clearMaze() {
-    ctx.clearRect(0, 0, 800, 800);
+    ctx.clearRect(0, 0, window.innerWidth, window.innerWidth);
 }
 function samePoint(a, b) {
     if (a.x === b.x && a.y === b.y) {
